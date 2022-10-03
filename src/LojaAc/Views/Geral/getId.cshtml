@@ -21,7 +21,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <a href="@Url.Action("deleteId", "Api", new { id = app.id })">Remover app</a>
+    <a href="@Url.Action("deleteId", "Geral", new { id = app.id })">Remover app</a>
 }
 
 @if (app.descricao.Contains("\n"))
@@ -39,7 +39,7 @@ else
     <p>@app.descricao</p>
 }
 <h2>Download</h2>
-<a href="@Url.Action("RedirectToId", "Api", new { id = app.id })">Clique para baixar @app.Nome</a>
+<a href="@Url.Action("RedirectToId", "Geral", new { id = app.id })">Clique para baixar @app.Nome</a>
 
 <script src="~/js/Whatsapp.js"></script>
 <script src="~/js/Telegram.js"></script>
