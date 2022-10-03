@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Logs";
+    var logs = ViewBag.Logs;
+}
+
+<h2>Logs da loja</h2>
+<table border="1">
+    <tr>
+        <td>Usuário</td>
+        <td>Texto do log</td>
+    </tr>
+    @foreach (var log in logs)
+    {
+        <tr>
+
+            <td>
+                @log.user
+            </td>
+            <td>
+                @log.TextoLog
+            </td>
+
+        </tr>
+    }
+
+</table>
+<a asp-area="" asp-controller="Api" asp-action="LimpaLogs">
+    <button class="btn btn-primary">Limpar logs</button>
+</a>

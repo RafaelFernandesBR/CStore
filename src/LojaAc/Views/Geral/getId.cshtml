@@ -1,0 +1,46 @@
+﻿@{
+    var app = Model;
+    ViewBag.Title = app.Nome;
+}
+
+<h2>@app.Nome</h2>
+<p>Quantidade de downloads<br />@app.clickes</p>
+
+<a href="" id="whatsapp-share-btt" rel="nofollow" target="_blank" class="whatsapp-share-button">
+    Compartilhar no
+    whatsapp
+</a>
+<a href="" id="telegram-share-btt" rel="nofollow" target="_blank" class="telegram-share-button">
+    Compartilhar no
+    telegram
+</a>
+<a href="" id="twitter-share-btt" rel="nofollow" target="_blank" class="twitter-share-button">
+    Compartilhar no
+    twitter
+</a>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a href="@Url.Action("deleteId", "Api", new { id = app.id })">Remover app</a>
+}
+
+@if (app.descricao.Contains("\n"))
+{
+    var descricao = app.descricao.Split('\n');
+
+    for (int i = 0; i < descricao.Length; i++)
+    {
+        <p>@descricao[i]</p>
+    }
+
+}
+else
+{
+    <p>@app.descricao</p>
+}
+<h2>Download</h2>
+<a href="@Url.Action("RedirectToId", "Api", new { id = app.id })">Clique para baixar @app.Nome</a>
+
+<script src="~/js/Whatsapp.js"></script>
+<script src="~/js/Telegram.js"></script>
+<script src="~/js/Twitter.js"></script>

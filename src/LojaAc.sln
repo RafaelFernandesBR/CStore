@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaAc", "LojaAc\LojaAc.csproj", "{20B15218-946D-41DF-89A8-EA64F5B6D01F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaAc.Data", "LojaAc.Data\LojaAc.Data.csproj", "{52FA676C-A14E-4ED6-9AFA-5B356F663774}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B87C1CD-F952-43E2-94EB-71FBE0740E36}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20B15218-946D-41DF-89A8-EA64F5B6D01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B15218-946D-41DF-89A8-EA64F5B6D01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B15218-946D-41DF-89A8-EA64F5B6D01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B15218-946D-41DF-89A8-EA64F5B6D01F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FA676C-A14E-4ED6-9AFA-5B356F663774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FA676C-A14E-4ED6-9AFA-5B356F663774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FA676C-A14E-4ED6-9AFA-5B356F663774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FA676C-A14E-4ED6-9AFA-5B356F663774}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBFA7317-98F0-4AFA-9D88-9E6063CC7BB7}
+	EndGlobalSection
+EndGlobal

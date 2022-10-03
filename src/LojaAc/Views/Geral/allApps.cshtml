@@ -1,0 +1,16 @@
+@{
+    ViewBag.Title = "Todos os aplicativos";
+}
+
+<h2>Aqui está todos os apps disponíveis</h2>
+@{
+    var Apps = Model;
+    foreach (var App in Apps)
+    {
+        <h2><a href="app/@App.id.ToString()">@App.Nome</a></h2>
+        string desc = App.descricao;
+        desc = LojaAc.FText.GetWords(desc, 80);
+
+        <p>@desc</p>
+    }
+}

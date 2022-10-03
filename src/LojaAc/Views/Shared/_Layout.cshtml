@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - LojaAc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/pjapif2.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <h1>Bem vindo a loja de apps</h1>
+    <header>
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Página inicial</a>
+            <div>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-not-admin" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-not-admin" asp-area="" asp-controller="Api" asp-action="allApps">
+                            Aplicativos
+                            disponíveis
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+    </header>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-area="" asp-controller="Home" asp-action="Logs">
+            <button class="btn btn-primary">Logs</button>
+        </a>
+
+        <a asp-area="" asp-controller="Api" asp-action="Logout">
+            <button class="btn btn-primary">Logout</button>
+        </a>
+    }
+    else
+    {
+        <a asp-area="" asp-controller="Home" asp-action="Defboard">
+            <button class="btn btn-primary">Entrar</button>
+        </a>
+    }
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <ul class="Admins">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cadastra">Cadastrar apps</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CriaConta">Criar conta</a>
+            </li>
+        </ul>
+    }
+    else
+    {
+        <h3>Redes sociais e contatos</h3>
+        <ul class="User">
+            <li class="nav-item">
+                <a href="https://www.youtube.com/channel/UC8u9hr7_aA9mDuem1ntRGYg">Android para cegos no youtube</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.facebook.com/Androidparacegos/">Android para cegos no Facebook</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://twitter.com/androidpcegos">Android para cegos no Twitter</a>
+            </li>
+        </ul>
+    }
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - android para cegos - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

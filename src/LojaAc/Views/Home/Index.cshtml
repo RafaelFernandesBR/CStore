@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Página inicial";
+}
+
+<h1>Bem vindo a loja de apps!</h1>
+<form action="Pesquiza" method="post">
+    <label>Pesquise um aplicativo</label>
+    <input type="text" name="pesq"><br />
+    <input type="submit" value="Pesquizar">
+</form>
+
+<p>Aplicativos recomendados</p>
+@{
+    var appsIndic = Model;
+
+    foreach (var App in appsIndic)
+    {
+        <h2><a href="app/@App.id.ToString()">@App.Nome</a></h2>
+        string desc = App.descricao;
+        desc = LojaAc.FText.GetWords(desc, 80);
+
+        <p>@desc</p>
+    }
+}

@@ -1,0 +1,26 @@
+@{
+    ViewBag.Title = "Resultado da pesquiza";
+}
+
+<h2>Resultado para @ViewBag.Pesquizado</h2>
+@{
+    var Apps = Model;
+
+    if (Apps.Count == 0)
+    {
+        <p>Não foi encontrado itens para essa pesquiza</p>
+    }
+    else
+    {
+        <p>Total de itens:<br />@Apps.Count</p>
+    }
+
+    foreach (var App in Apps)
+    {
+        <h2><a href="app/@App.id.ToString()">@App.nome</a></h2>
+        string desc = App.descricao;
+        desc = LojaAc.FText.GetWords(desc, 50);
+
+        <p>@desc</p>
+    }
+}

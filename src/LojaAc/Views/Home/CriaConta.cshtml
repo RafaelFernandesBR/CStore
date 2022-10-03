@@ -1,0 +1,15 @@
+@{
+    ViewBag.Title = "Criar conta";
+}
+
+<p>Crie sua conta aqui</p>
+<form action="/CadastraUser" method="post">
+    <label>Nome</label>
+    <input type="text" name="nome"><br />
+    <label>Usuário</label>
+    <input type="text" name="user"><br />
+    <label>Senha</label>
+    <input type="password" name="psw"><br />
+
+    <input type="submit" value="Enviar">
+</form>
